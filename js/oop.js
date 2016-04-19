@@ -1,5 +1,5 @@
-function Human(){
-   this.name='Garry';
+function Human(name){
+   this.name=name;
    this.age= 41;
    this.gender='male';
    this.height=196;
@@ -23,8 +23,8 @@ function Student () {
     };
 };
 
-Worker.prototype = new Human();
-Student.prototype = new Human();
+Worker.prototype = new Human('Василий');
+Student.prototype = new Human('Григорий');
 
 
 var newStudent = new Student();
@@ -33,7 +33,7 @@ console.log('newStudent.name', newStudent.name );
 
 var newStudent1 = new Student();
 
-console.log('newStudent1.name', newStudent1.height + "cm");
+console.log('newStudent1.height', newStudent1.height + "cm");
 
 var newStudent2 = new Student();
 newStudent2.watchtv();
@@ -41,11 +41,12 @@ newStudent2.watchtv();
 
 var newWorker = new Worker();
 
-console.log('newWorker.male', newWorker.gender);
+console.log('newWorker.gender', newWorker.gender);
+console.log('newWorker.name', newWorker.name);
 
 var newWorker1 = new Worker();
 
-console.log('newWorker1.male', newWorker1.weight + "kg");
+console.log('newWorker1.weight', newWorker1.weight + "kg");
 
 var newWorker2 = new Worker();
 newWorker2.make();

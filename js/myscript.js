@@ -69,7 +69,7 @@ search =  $('#search').val();
     $.ajax({
         type: 'GET',
         url:
-        'http://ajax.googleapis.com/ajax/services/search/web?v=1.0&key=ABQIAAAACKQaiZJrS0bhr9YARgDqUxQBCBLUIYB7IF2WaNrkYqF0tBovNBQFDtM_KNtb3xQxWff2mI5hipc3lg&rsz=large&q=' + search + '&callback=GoogleCallback&context=?',
+'http://ajax.googleapis.com/ajax/services/search/web?v=1.0&key=ABQIAAAACKQaiZJrS0bhr9YARgDqUxQBCBLUIYB7IF2WaNrkYqF0tBovNBQFDtM_KNtb3xQxWff2mI5hipc3lg&rsz=large&q=' + search + '&callback=GoogleCallback&context=?',
         dataType: 'jsonp',
         success: function(data){
  
@@ -83,6 +83,34 @@ search =  $('#search').val();
  }  
    
  });
+ 
+ $("#search").keyup(function(event) {
+
+if(event.keyCode==13) {search =  $('#search').val(); 
+
+  if(search){
+    
+    $('div.content-item').remove();  
+      
+    $.ajax({
+        type: 'GET',
+        url:
+'http://ajax.googleapis.com/ajax/services/search/web?v=1.0&key=ABQIAAAACKQaiZJrS0bhr9YARgDqUxQBCBLUIYB7IF2WaNrkYqF0tBovNBQFDtM_KNtb3xQxWff2mI5hipc3lg&rsz=large&q=' + search + '&callback=GoogleCallback&context=?',
+        dataType: 'jsonp',
+        success: function(data){
+ 
+        },
+        error: function(){
+            
+        }
+        
+    });
+   
+ }  }
+
+});
+ 
+         
  
   
     
